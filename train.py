@@ -46,11 +46,11 @@ def main(args):
 
     save_model_path = os.path.join(
     model_config["logging"]["save_model_path"],
-    model_config["logging"]["run_name"]  # No timestamp here
-)
+    model_config["logging"]["run_name"])  # No timestamp here
+
 
 # Create directory if not exists
-os.makedirs(save_model_path, exist_ok=True)
+    os.makedirs(save_model_path, exist_ok=True)
 
     if model_config["logging"]["tensorboard"]:
         writer = SummaryWriter(os.path.join(save_model_path, "logs"))
