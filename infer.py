@@ -42,8 +42,8 @@ def prepare_single_input(user_id, cup_size, user_numeric, item_id, category, ite
 
 if __name__ == "__main__":
     # Paths
-    saved_model_path = "runs/trial_2025-Aug-11-09-04-41"  # your model path
-    checkpoint = "E20.pytorch"                          # change if needed
+    saved_model_path = "runs/trial_"  # your model path
+    checkpoint = "model.pytorch"                          # change if needed
 
     # Load model
     model, model_config = load_model(saved_model_path, checkpoint)
