@@ -1,3 +1,3 @@
 {
-    "data_path": "data/modcloth_final_data_processed.jsonl",
+    "data_path": "data/renttherunway_final_data_processed.jsonl",
 }
