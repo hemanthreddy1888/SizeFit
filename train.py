@@ -12,6 +12,7 @@ from utils import to_var, load_config_from_json
 
 from torch.utils.data import DataLoader
 from modcloth import ModCloth
+from runway import RentTheRunway
 from model import SFNet
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -28,7 +29,7 @@ def main(args):
 
     datasets = OrderedDict()
     for split in splits:
-        datasets[split] = ModCloth(data_config, split=split)
+        datasets[split] = RentTheRunway(data_config, split=split)
 
     # initialize model
     model = SFNet(model_config["sfnet"])
