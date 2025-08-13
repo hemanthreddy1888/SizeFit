@@ -45,10 +45,12 @@ def main(args):
     print("-" * 50)
 
     save_model_path = os.path.join(
-        model_config["logging"]["save_model_path"],
-        model_config["logging"]["run_name"] + ts,
-    )
-    os.makedirs(save_model_path)
+    model_config["logging"]["save_model_path"],
+    model_config["logging"]["run_name"])  # No timestamp here
+
+
+# Create directory if not exists
+    os.makedirs(save_model_path, exist_ok=True)
 
     if model_config["logging"]["tensorboard"]:
         writer = SummaryWriter(os.path.join(save_model_path, "logs"))
@@ -149,9 +151,9 @@ def main(args):
 
             # Save checkpoint
             if split == "train":
-                checkpoint_path = os.path.join(
-                    save_model_path, "E%i.pytorch" % (epoch + 1)
-                )
+                checkpoint_path = os.path.join(save_model_path, "model.pytorch")
+                torch.save(model.state_dict(), checkpoint_path)
+                print(f"Model saved at {checkpoint_path}")
                 torch.save(model.state_dict(), checkpoint_path)
                 print("Model saved at %s" % checkpoint_path)
 
