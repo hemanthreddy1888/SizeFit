@@ -29,7 +29,7 @@ def main(args):
 
     datasets = OrderedDict()
     for split in splits:
-        datasets[split] = RentTheRunway(data_config, split=split)
+        datasets[split] = ModCloth(data_config, split=split)
 
     # initialize model
     model = SFNet(model_config["sfnet"])
