@@ -36,7 +36,7 @@ def main(args):
     pred_tracker = []
 
     print("Preparing test data ...")
-    dataset = ModCloth(data_config, split="test")
+    dataset = RentTheRunway(data_config, split="test")
     data_loader = DataLoader(
         dataset=dataset,
         batch_size=model_config["trainer"]["batch_size"],
