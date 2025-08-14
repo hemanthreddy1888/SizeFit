@@ -47,7 +47,7 @@ def main(args):
 
     save_model_path = os.path.join(
         model_config["logging"]["save_model_path"],
-        model_config["logging"]["run_name"] + ts,
+        model_config["logging"]["run_name"],
     )
     os.makedirs(save_model_path)
 
@@ -151,7 +151,7 @@ def main(args):
             # Save checkpoint
             if split == "train":
                 checkpoint_path = os.path.join(
-                    save_model_path, "E%i.pytorch" % (epoch + 1)
+                    save_model_path, "model.pytorch"
                 )
                 torch.save(model.state_dict(), checkpoint_path)
                 print("Model saved at %s" % checkpoint_path)
