@@ -81,7 +81,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--data_config_path", type=str, default="configs/data.jsonnet")
     parser.add_argument("--saved_model_path", type=str, required=True)
-    parser.add_argument("--checkpoint", type=str, default="model.pytorch")
+    parser.add_argument("--checkpoint", type=str, default="E20.pytorch")
 
     args = parser.parse_args()
     main(args)
